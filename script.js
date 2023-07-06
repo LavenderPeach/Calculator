@@ -104,4 +104,16 @@ function setOperation(operator) {
     shouldResetScreen = true
 }
 
-
+function eval() {
+    if (currentOperation === null || shouldResetScreen) return
+    if (currentOperation === '÷' && currentScreen.textContent === '0') {
+        alert('Error!')
+        return
+    }
+    secondOperand = currentScreen.textContent
+    currentScreen.textContent = roundResult(
+        operate(firstOperand, currentOperation, secondOperand)   
+    )
+    lastScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperation} =`
+    currentOperation = null
+}
