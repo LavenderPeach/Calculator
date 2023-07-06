@@ -45,3 +45,23 @@ const decimalButton = document.getElementsByClassName('.btn-decimal')
 const equalsButton = document.getElementsByClassName('.btn-equal')
 const lastScreen = document.getElementsByClassName('.screen-last')
 const currentScreen = document.getElementsByClassName('.screen-current')
+
+let firstOperand = ''
+let secondOperand = ''
+let currentOperation = null
+let shouldResetScreen = false
+
+numberButtons.forEach((button) =>
+button.addEventListener('click', () => appendNumber(button.textContent))
+)
+
+operatorButtons.forEach((button) =>
+button.addEventListener('click', () => setOperation(button.textContent))
+)
+
+window.addEventListener('keydown', handleKeyboardInput)
+equalsButton.addEventListener('click', eval)
+clearButton.addEventListener('click', clear)
+deleteButton.addEventListener('click', deleteNumber)
+decimalButton.addEventListener('click', appendDecimal)
+
