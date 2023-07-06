@@ -37,3 +37,11 @@ function operate (operator, a, b) {
     }
 }
 
+const numberButtons = document.querySelectorAll('.btn-number')
+const operatorButtons = document.querySelectorAll('.btn-operator')
+const clearButton = document.getElementsByClassName('.btn-clear')
+const deleteButton = document.getElementsByClassName('.btn-delete')
+const decimalButton = document.getElementsByClassName('.btn-decimal')
+const equalsButton = document.getElementsByClassName('.btn-equal')
+const lastScreen = document.getElementsByClassName('.screen-last')
+const currentScreen = document.getElementsByClassName('.screen-current')
