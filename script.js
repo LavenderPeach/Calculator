@@ -65,3 +65,43 @@ clearButton.addEventListener('click', clear)
 deleteButton.addEventListener('click', deleteNumber)
 decimalButton.addEventListener('click', appendDecimal)
 
+function appendNumber(number) {
+    if (currentScreen.textContent === '0' || shouldResetScreen)
+    resetScreen()
+    currentScreen.textContent += number
+}
+
+function resetScreen() {
+    currentScreen.textContent = ''
+    shouldResetScreen = false
+}
+
+function clear() {
+    currentScreen.textContent = '0'
+    lastScreen.textContent = ''
+    firstOperand = ''
+    secondOperand = ''
+    currentOperation = null
+}
+
+function appendDecimal () {
+    if (shouldResetScreen) resetScreen()
+    if (currentScreen.textContent === '')
+        currentScreen.textContent = '0'
+}
+
+function deleteNumber() {
+currentScreen.textContent = currentScreen.textContent
+.toString()
+.slice(0, -1)
+}
+
+function setOperation(operator) {
+    if (currentOperation !== null) eval()
+    firstOperand = currentScreen.textContent
+    currentOperation = operator
+    lastScreen.textContent = `${firstOperand} ${currentOperation}`
+    shouldResetScreen = true
+}
+
+
