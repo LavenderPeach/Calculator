@@ -18,3 +18,31 @@ body {
     background-color: white;
     box-shadow: 0 0 10px;
 }
+
+.calculator {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 11px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.screen-last {
+    color: gray;
+}
+
+.screen-current {
+    color: black;
+}
+
+.all-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
