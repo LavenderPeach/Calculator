@@ -91,8 +91,10 @@ function clear() {
 
 function appendDecimal () {
     if (shouldResetScreen) resetScreen()
-    if (currentScreen.textContent === '')
-        currentScreen.textContent = '0'
+    if (!currentScreen.textContent.includes('.')) {
+        if (currentScreen.textContent === '') currentScreen.textContent = '0';
+        currentScreen.textContent += '.';
+    }     
 }
 
 function deleteNumber() {
